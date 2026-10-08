@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مهامي – قائمة المهام اليومية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="board">
+    <header>
+      <h1>مهامي</h1>
+      <p id="summary" aria-live="polite"></p>
+    </header>
+
+    <form id="add-form" autocomplete="off">
+      <label for="task-input" class="sr-only">مهمة جديدة</label>
+      <input id="task-input" type="text" placeholder="اكتب مهمة واضغط إضافة" maxlength="120" required>
+      <button type="submit">إضافة مهمة</button>
+    </form>
+
+    <div class="filters" role="group" aria-label="تصفية المهام">
+      <button type="button" data-filter="all" class="active">الكل</button>
+      <button type="button" data-filter="active">المتبقية</button>
+      <button type="button" data-filter="done">المنجزة</button>
+    </div>
+
+    <ul id="task-list"></ul>
+    <p id="empty" class="empty" hidden></p>
+
+    <footer>
+      <button type="button" id="clear-done" class="link">حذف المهام المنجزة</button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
